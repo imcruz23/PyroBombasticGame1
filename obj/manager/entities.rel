@@ -1,5 +1,5 @@
 XL2
-H 1 areas 3A global symbols
+H 1 areas 3C global symbols
 M Entity_Manager
 S .__.H$L. Def0000
 S e_type_enemy Def0001
@@ -10,12 +10,13 @@ S e_type_floor Def0002
 S max_entities Def0064
 S e_cmps_position Def0040
 S e_prv_ptr Def0007
-S sizeof_e Def0009
+S sizeof_e Def000B
 S e_cmps_render Def0008
 S e_cmps_physics Def0010
 S .__.ABS. Def0000
 S e_color Def0005
 S e_cmps_input_bit Def0005
+S e_width Def0009
 S e_cmps_alive Def0080
 S e_type_mainchar Def0000
 S e_cmps_position_bit Def0006
@@ -31,122 +32,123 @@ S e_cmps Def0000
 S e_cmps_default Def00FF
 S e_x Def0001
 S e_cmps_invalid Def0000
+S e_height Def000A
 S e_y Def0002
 S mainchar_entity Ref0000
-A _CODE size 421 flags 0 addr 0
-S man_entity_forall_matching Def03CB
-S man_entity_decrease_num Def0407
-S loop_forall_matching Def03D6
-S increase_free_entity Def040F
-S final Def03C7
-S man_entity_set4destruction Def03FD
-S man_entity_create Def0388
-S man_entity_init Def0387
-S man_entity_get_from_idx Def03FC
-S man_entity_increase_num Def03FF
+A _CODE size 4E9 flags 0 addr 0
+S man_entity_forall_matching Def0493
+S man_entity_decrease_num Def04CF
+S loop_forall_matching Def049E
+S increase_free_entity Def04D7
+S final Def048F
+S man_entity_set4destruction Def04C5
+S man_entity_create Def0450
+S man_entity_init Def044F
+S man_entity_get_from_idx Def04C4
+S man_entity_increase_num Def04C7
 S num_entities Def0002
-S afterjp_matching Def03EA
-S man_entity_forall Def03A4
-S loop_forall Def03AF
-S man_entity_update Def03FE
-S skip_ce Def039F
-S man_entity_destroy Def03A0
+S afterjp_matching Def04B2
+S man_entity_forall Def046C
+S loop_forall Def0477
+S man_entity_update Def04C6
+S skip_ce Def0467
+S man_entity_destroy Def0468
 S array_entities Def0003
-S function_for_all Def03A1
-S continue Def03E2
-S count Def03A3
-S afterjp Def03BB
-S final_matching Def03F7
-S man_entity_first_entity Def041A
+S function_for_all Def0469
+S continue Def04AA
+S count Def046B
+S afterjp Def0483
+S final_matching Def04BF
+S man_entity_first_entity Def04E2
 S next_free_entity Def0000
-S man_entity_forall_pairs_matching Def03FB
+S man_entity_forall_pairs_matching Def04C3
 T 00 00 03 00 00
 R 00 00 00 00 00 02 00 00
 T 03 00
 R 00 00 00 00
-T 87 03
+T 4F 04
 R 00 00 00 00
-T 87 03 C9
+T 4F 04 C9
 R 00 00 00 00
-T 88 03
+T 50 04
 R 00 00 00 00
-T 88 03 3A 02 00 FE 64 28 10 ED 5B 00 00 01 09 00
+T 50 04 3A 02 00 FE 64 28 10 ED 5B 00 00 01 0B 00
 R 00 00 00 00 00 03 00 00 00 0B 00 00
-T 96 03 CD 00 00 CD 0F 04 CD FF 03
-R 00 00 00 00 02 03 16 00 00 06 00 00 00 09 00 00
-T 9F 03
+T 5E 04 CD 00 00 CD D7 04 CD C7 04
+R 00 00 00 00 02 03 17 00 00 06 00 00 00 09 00 00
+T 67 04
 R 00 00 00 00
-T 9F 03 C9
+T 67 04 C9
 R 00 00 00 00
-T A0 03
+T 68 04
 R 00 00 00 00
-T A0 03 C9 00 00 09
+T 68 04 C9 00 00 0B
 R 00 00 00 00
-T A4 03
+T 6C 04
 R 00 00 00 00
-T A4 03 22 A1 03 CD 1A 04 3E 64 32 A3 03
+T 6C 04 22 69 04 CD E2 04 3E 64 32 6B 04
 R 00 00 00 00 00 03 00 00 00 06 00 00 00 0B 00 00
-T AF 03
+T 77 04
 R 00 00 00 00
-T AF 03 DD 2A 00 00 21 BB 03 E5 2A A1 03 E9
+T 77 04 DD 2A 00 00 21 83 04 E5 2A 69 04 E9
 R 00 00 00 00 00 04 00 00 00 07 00 00 00 0B 00 00
-T BB 03
+T 83 04
 R 00 00 00 00
-T BB 03 CD 0F 04 3A A3 03 3D 32 A3 03 20 E8
+T 83 04 CD D7 04 3A 6B 04 3D 32 6B 04 20 E8
 R 00 00 00 00 00 03 00 00 00 06 00 00 00 0A 00 00
-T C7 03
+T 8F 04
 R 00 00 00 00
-T C7 03 CD 1A 04 C9
+T 8F 04 CD E2 04 C9
 R 00 00 00 00 00 03 00 00
-T CB 03
+T 93 04
 R 00 00 00 00
-T CB 03 22 A1 03 CD 1A 04 3E 64 32 A3 03
+T 93 04 22 69 04 CD E2 04 3E 64 32 6B 04
 R 00 00 00 00 00 03 00 00 00 06 00 00 00 0B 00 00
-T D6 03
+T 9E 04
 R 00 00 00 00
-T D6 03 C5 DD 2A 00 00 DD 7E 00 A0 B8 20 08
+T 9E 04 C5 DD 2A 00 00 DD 7E 00 A0 B8 20 08
 R 00 00 00 00 00 05 00 00
-T E2 03
+T AA 04
 R 00 00 00 00
-T E2 03 21 EA 03 E5 2A A1 03 E9
+T AA 04 21 B2 04 E5 2A 69 04 E9
 R 00 00 00 00 00 03 00 00 00 07 00 00
-T EA 03
+T B2 04
 R 00 00 00 00
-T EA 03 CD 0F 04 3A A3 03 3D 32 A3 03 C1 20 DF
+T B2 04 CD D7 04 3A 6B 04 3D 32 6B 04 C1 20 DF
 R 00 00 00 00 00 03 00 00 00 06 00 00 00 0A 00 00
-T F7 03
+T BF 04
 R 00 00 00 00
-T F7 03 CD 1A 04 C9
+T BF 04 CD E2 04 C9
 R 00 00 00 00 00 03 00 00
-T FB 03
+T C3 04
 R 00 00 00 00
-T FB 03 C9
+T C3 04 C9
 R 00 00 00 00
-T FC 03
+T C4 04
 R 00 00 00 00
-T FC 03 C9
+T C4 04 C9
 R 00 00 00 00
-T FD 03
+T C5 04
 R 00 00 00 00
-T FD 03 C9
+T C5 04 C9
 R 00 00 00 00
-T FE 03
+T C6 04
 R 00 00 00 00
-T FE 03 C9
+T C6 04 C9
 R 00 00 00 00
-T FF 03
+T C7 04
 R 00 00 00 00
-T FF 03 3A 02 00 3C 32 02 00 C9
+T C7 04 3A 02 00 3C 32 02 00 C9
 R 00 00 00 00 00 03 00 00 00 07 00 00
-T 07 04
+T CF 04
 R 00 00 00 00
-T 07 04 3A 02 00 3D 32 02 00 C9
+T CF 04 3A 02 00 3D 32 02 00 C9
 R 00 00 00 00 00 03 00 00 00 07 00 00
-T 0F 04
+T D7 04
 R 00 00 00 00
-T 0F 04 2A 00 00 01 09 00 09 22 00 00 C9
+T D7 04 2A 00 00 01 0B 00 09 22 00 00 C9
 R 00 00 00 00 00 03 00 00 00 0A 00 00
-T 1A 04
+T E2 04
 R 00 00 00 00
-T 1A 04 21 03 00 22 00 00 C9
+T E2 04 21 03 00 22 00 00 C9
 R 00 00 00 00 00 03 00 00 00 06 00 00

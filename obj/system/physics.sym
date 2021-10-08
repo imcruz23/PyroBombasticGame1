@@ -192,6 +192,7 @@ Symbol Table
     e_cmps_render                                               =  0008 G
     e_cmps_render_bit                                           =  0003 G
     e_color                                                     =  0005 G
+    e_height                                                    =  000A G
     e_prv_ptr                                                   =  0007 G
     e_type                                                      =  0006 G
     e_type_bullet                                               =  0003 G
@@ -200,6 +201,7 @@ Symbol Table
     e_type_mainchar                                             =  0000 G
     e_vx                                                        =  0003 G
     e_vy                                                        =  0004 G
+    e_width                                                     =  0009 G
     e_x                                                         =  0001 G
     e_y                                                         =  0002 G
     increase_free_entity                                           **** GX
@@ -229,7 +231,7 @@ Symbol Table
     opc_JR                                                      =  0018 G
     opc_LD_D                                                    =  0016 G
   0 phy_update_forone                                              0073 GR
-    sizeof_e                                                    =  0009 G
+    sizeof_e                                                    =  000B G
   0 sys_physics_keyboard                                           002B GR
   0 sys_physics_update                                             0055 GR
   0 sys_update_bullets                                             005E GR

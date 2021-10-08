@@ -1,5 +1,5 @@
 XL2
-H 2 areas D4 global symbols
+H 2 areas D6 global symbols
 M cpct_keyboard
 S FW_PASTEL_YELLOW Def0019
 S Joy1_Right Def0806
@@ -66,7 +66,7 @@ S Key_CursorLeft Def0101
 S sys_render_wait Ref0000
 S Key_J Def2005
 S Key_K Def2004
-S sizeof_e Def0009
+S sizeof_e Def000B
 S FW_PURPLE Def0007
 S Key_L Def1004
 S opc_LD_D Def0016
@@ -120,6 +120,7 @@ S FW_LIME Def0015
 S Key_Esc Def0408
 S Key_Copy Def0201
 S e_cmps_input_bit Def0005
+S e_width Def0009
 S FW_BLUE Def0001
 S HW_LIME Def001A
 S FW_SEA_GREEN Def0013
@@ -152,7 +153,7 @@ S .__.CPU. Def0000
 S cpct_waitVSYNC_asm Ref0000
 S PAL_PENR Def0000
 S e_vx Def0003
-S cmps Def00F8
+S cmps Def00D8
 S e_vy Def0004
 S cpct_memcpy_asm Ref0000
 S e_cmps_render_bit Def0003
@@ -195,6 +196,7 @@ S HW_SKY_BLUE Def0017
 S HW_MAUVE Def001D
 S Key_4 Def0107
 S e_cmps_invalid Def0000
+S e_height Def000A
 S e_y Def0002
 S FW_WHITE Def000D
 S Key_5 Def0206
@@ -215,12 +217,12 @@ S enemy_entity Def0007
 S loop Def001D
 S mainchar_entity Def0000
 A _DATA size 0 flags 0 addr 0
-T 00 00 D8 00 00 00 00 FF 00 F8 12 10 00 00 F0 01
+T 00 00 F8 00 00 00 00 FF 00 D8 12 10 00 00 F0 01
 R 00 00 00 00
 T 0E 00
 R 00 00 00 00
 T 0E 00 CD 00 00 21 00 00 CD 00 00 21
-R 00 00 00 00 02 03 B0 00 00 06 00 00 02 09 26 00
+R 00 00 00 00 02 03 B1 00 00 06 00 00 02 09 26 00
 T 18 00 07 00 CD 00 00
 R 00 00 00 00 00 02 00 00 02 05 26 00
 T 1D 00
@@ -228,4 +230,4 @@ R 00 00 00 00
 T 1D 00 CD 00 00 CD 00 00 CD 00 00 CD
 R 00 00 00 00 02 03 70 00 02 06 6A 00 02 09 3E 00
 T 27 00 00 00 18 F2
-R 00 00 00 00 02 02 94 00
+R 00 00 00 00 02 02 95 00

@@ -167,7 +167,7 @@ Symbol Table
     PAL_PENR                                                    =  0000 G
     PPI_PORT_B                                                  =  00F5 G
   0 _main                                                          000E GR
-    cmps                                                        =  00F8 G
+    cmps                                                        =  00D8 G
     cpct_disableFirmware_asm                                       **** GX
     cpct_getScreenPtr_asm                                          **** GX
     cpct_memcpy_asm                                                **** GX
@@ -195,6 +195,7 @@ Symbol Table
     e_cmps_render                                               =  0008 G
     e_cmps_render_bit                                           =  0003 G
     e_color                                                     =  0005 G
+    e_height                                                    =  000A G
     e_prv_ptr                                                   =  0007 G
     e_type                                                      =  0006 G
     e_type_bullet                                               =  0003 G
@@ -203,6 +204,7 @@ Symbol Table
     e_type_mainchar                                             =  0000 G
     e_vx                                                        =  0003 G
     e_vy                                                        =  0004 G
+    e_width                                                     =  0009 G
     e_x                                                         =  0001 G
     e_y                                                         =  0002 G
   0 enemy_entity                                                   0007 GR
@@ -226,7 +228,7 @@ Symbol Table
     opc_EI                                                      =  00FB G
     opc_JR                                                      =  0018 G
     opc_LD_D                                                    =  0016 G
-    sizeof_e                                                    =  0009 G
+    sizeof_e                                                    =  000B G
     sys_physics_update                                             **** GX
     sys_render_update                                              **** GX
     sys_render_wait                                                **** GX

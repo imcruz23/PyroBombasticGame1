@@ -4433,56 +4433,58 @@ Hexadecimal [16-Bits]
                      0005    14 e_color     == 5
                      0006    15 e_type      == 6
                      0007    16 e_prv_ptr   == 7      ;; Pointer, 2 bytes
-                             17 
-                             18 ;; Entity info
-                     0009    19 sizeof_e        == 9
-                     0064    20 max_entities    == 100
-                             21 
-                             22 
-                             23 ;; Bit for matching & properties
+                     0009    17 e_width     == 9
+                     000A    18 e_height    == 10
+                             19 
+                             20 ;; Entity info
+                     000B    21 sizeof_e        == 11
+                     0064    22 max_entities    == 100
+                             23 
                              24 
-                     0007    25 e_cmps_alive_bit    = 7
-                     0006    26 e_cmps_position_bit = 6
-                     0005    27 e_cmps_input_bit    = 5
-                     0004    28 e_cmps_physics_bit  = 4
-                     0003    29 e_cmps_render_bit   = 3
-                             30 
-                             31 ;; Component Types (masks)
-                     0000    32 e_cmps_invalid  = 0x00
-                     0080    33 e_cmps_alive    = (1 << e_cmps_alive_bit)
-                     0040    34 e_cmps_position = (1 << e_cmps_position_bit)
-                     0020    35 e_cmps_input    = (1 << e_cmps_input_bit)
-                     0010    36 e_cmps_physics  = (1 << e_cmps_physics_bit)
-                     0008    37 e_cmps_render   = (1 << e_cmps_render_bit)
-                     00FF    38 e_cmps_default  = 0xFF
-                             39 
-                             40 ;; Entity types
-                     0000    41 e_type_mainchar     = 0
-                     0001    42 e_type_enemy        = 1
-                     0002    43 e_type_floor        = 2
-                     0003    44 e_type_bullet       = 3
-                             45 
-                             46 ;; Public functions
-                             47 .globl man_entity_init
-                             48 .globl man_entity_create
-                             49 .globl man_entity_destroy
-                             50 .globl man_entity_forall
-                             51 .globl man_entity_forall_matching
-                             52 .globl man_entity_forall_pairs_matching
-                             53 .globl man_entity_get_from_idx
-                             54 .globl man_entity_set4destruction
+                             25 ;; Bit for matching & properties
+                             26 
+                     0007    27 e_cmps_alive_bit    = 7
+                     0006    28 e_cmps_position_bit = 6
+                     0005    29 e_cmps_input_bit    = 5
+                     0004    30 e_cmps_physics_bit  = 4
+                     0003    31 e_cmps_render_bit   = 3
+                             32 
+                             33 ;; Component Types (masks)
+                     0000    34 e_cmps_invalid  = 0x00
+                     0080    35 e_cmps_alive    = (1 << e_cmps_alive_bit)
+                     0040    36 e_cmps_position = (1 << e_cmps_position_bit)
+                     0020    37 e_cmps_input    = (1 << e_cmps_input_bit)
+                     0010    38 e_cmps_physics  = (1 << e_cmps_physics_bit)
+                     0008    39 e_cmps_render   = (1 << e_cmps_render_bit)
+                     00FF    40 e_cmps_default  = 0xFF
+                             41 
+                             42 ;; Entity types
+                     0000    43 e_type_mainchar     = 0
+                     0001    44 e_type_enemy        = 1
+                     0002    45 e_type_floor        = 2
+                     0003    46 e_type_bullet       = 3
+                             47 
+                             48 ;; Public functions
+                             49 .globl man_entity_init
+                             50 .globl man_entity_create
+                             51 .globl man_entity_destroy
+                             52 .globl man_entity_forall
+                             53 .globl man_entity_forall_matching
+                             54 .globl man_entity_forall_pairs_matching
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 85.
 Hexadecimal [16-Bits]
 
 
 
-                             55 .globl man_entity_update
-                             56 .globl cpct_memcpy_asm
-                             57 .globl man_entity_increase_num
-                             58 .globl man_entity_decrease_num
-                             59 .globl mainchar_entity
-                             60 .globl increase_free_entity
-                             61 .globl man_entity_first_entity
+                             55 .globl man_entity_get_from_idx
+                             56 .globl man_entity_set4destruction
+                             57 .globl man_entity_update
+                             58 .globl cpct_memcpy_asm
+                             59 .globl man_entity_increase_num
+                             60 .globl man_entity_decrease_num
+                             61 .globl mainchar_entity
+                             62 .globl increase_free_entity
+                             63 .globl man_entity_first_entity
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 86.
 Hexadecimal [16-Bits]
 
@@ -4564,7 +4566,7 @@ Hexadecimal [16-Bits]
    407F C8            [11]   73         ret z
                              74 
                              75         ;; Test Key and perform
-   4080 CD 35 45      [17]   76         call cpct_isKeyPressed_asm
+   4080 CD FD 45      [17]   76         call cpct_isKeyPressed_asm
    4083 28 ED         [12]   77     jr z, nextkey
                              78 
                              79     ;; Key is pressed, perform key_left_action
@@ -4582,7 +4584,7 @@ Hexadecimal [16-Bits]
    4090                      91 sys_physics_update::
    4090 21 AE 40      [10]   92     ld hl, #phy_update_forone
    4093 06 20         [ 7]   93     ld b, #e_cmps_input ;; Condition: entity must have input
-   4095 CD CC 44      [17]   94     call man_entity_forall_matching
+   4095 CD 94 45      [17]   94     call man_entity_forall_matching
    4098 C9            [10]   95 ret
                              96 
                              97 
@@ -4599,7 +4601,7 @@ Hexadecimal [16-Bits]
    40AD C9            [10]  108 ret
                             109 
    40AE                     110 phy_update_forone::
-   40AE CD 17 46      [17]  111         call cpct_scanKeyboard_asm
+   40AE CD DF 46      [17]  111         call cpct_scanKeyboard_asm
    40B1 CD 66 40      [17]  112         call sys_physics_keyboard
                             113         ;ld a, 1(ix)  ;; speed 
                             114         ;add 3(ix)

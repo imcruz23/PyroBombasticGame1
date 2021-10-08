@@ -1,5 +1,5 @@
 XL2
-H 1 areas 2D global symbols
+H 1 areas 2F global symbols
 M Entity_Manager
 S .__.H$L. Def0000
 S man_entity_forall_matching Ref0000
@@ -18,7 +18,7 @@ S e_cmps_position Def0040
 S man_entity_get_from_idx Ref0000
 S man_entity_increase_num Ref0000
 S e_prv_ptr Def0007
-S sizeof_e Def0009
+S sizeof_e Def000B
 S e_cmps_render Def0008
 S man_entity_forall Ref0000
 S e_cmps_physics Def0010
@@ -27,6 +27,7 @@ S .__.ABS. Def0000
 S man_entity_destroy Ref0000
 S e_color Def0005
 S e_cmps_input_bit Def0005
+S e_width Def0009
 S e_cmps_alive Def0080
 S e_type_mainchar Def0000
 S e_cmps_position_bit Def0006
@@ -43,6 +44,7 @@ S man_entity_first_entity Ref0000
 S e_cmps_default Def00FF
 S e_x Def0001
 S e_cmps_invalid Def0000
+S e_height Def000A
 S e_y Def0002
 S mainchar_entity Ref0000
 S man_entity_forall_pairs_matching Ref0000

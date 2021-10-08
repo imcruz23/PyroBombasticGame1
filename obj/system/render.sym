@@ -26,6 +26,7 @@ Symbol Table
     e_cmps_render                                               =  0008 G
     e_cmps_render_bit                                           =  0003 G
     e_color                                                     =  0005 G
+    e_height                                                    =  000A G
     e_prv_ptr                                                   =  0007 G
     e_type                                                      =  0006 G
     e_type_bullet                                               =  0003 G
@@ -34,6 +35,7 @@ Symbol Table
     e_type_mainchar                                             =  0000 G
     e_vx                                                        =  0003 G
     e_vy                                                        =  0004 G
+    e_width                                                     =  0009 G
     e_x                                                         =  0001 G
     e_y                                                         =  0002 G
   0 halts                                                          0032 GR
@@ -52,13 +54,18 @@ Symbol Table
     man_entity_set4destruction                                     **** GX
     man_entity_update                                              **** GX
     max_entities                                                =  0064 G
-    sizeof_e                                                    =  0009 G
+    sizeof_e                                                    =  000B G
   0 sys_render_forone                                              0009 GR
   0 sys_render_update                                              0000 GR
   0 sys_render_wait                                                0030 GR
-
-
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 3.
 Hexadecimal [16-Bits]
 
 Area Table

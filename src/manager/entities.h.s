@@ -14,9 +14,11 @@ e_vy        == 4
 e_color     == 5
 e_type      == 6
 e_prv_ptr   == 7      ;; Pointer, 2 bytes
+e_width     == 9
+e_height    == 10
 
 ;; Entity info
-sizeof_e        == 9
+sizeof_e        == 11
 max_entities    == 100
 
 

@@ -61,10 +61,10 @@ man_entity_forall::
             ld a, (count)
             dec a
             ld (count), a
-        jr nz, loop_forall
+    jr nz, loop_forall
 
-        final:
-            call man_entity_first_entity
+    final:
+        call man_entity_first_entity
 ret
 
 ;; ---------------------------------------------
@@ -99,10 +99,10 @@ man_entity_forall_matching::
                 dec a
                 ld (count), a
                 pop bc
-            jr nz, loop_forall_matching
+    jr nz, loop_forall_matching
 
-            final_matching:
-                call man_entity_first_entity
+    final_matching:
+        call man_entity_first_entity
 ret
 
 
