@@ -1,0 +1,151 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+
+
+                              1 ;; INIT OF RENDER.S
+                              2 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+
+
+                              3 .include "./manager/entities.h.s"
+                              1 ;; This file contains all the indexes to adress to the entities
+                              2 
+                              3 .module Entity_Manager
+                              4 
+                              5 ;;------------------------------------------------------
+                              6 ;; Entities
+                              7 ;; Definition of entity structure fields
+                              8 
+                     0000     9 e_cmps      == 0
+                     0001    10 e_x         == 1
+                     0002    11 e_y         == 2
+                     0003    12 e_vx        == 3
+                     0004    13 e_vy        == 4
+                     0005    14 e_color     == 5
+                     0006    15 e_type      == 6
+                     0007    16 e_prv_ptr   == 7      ;; Pointer, 2 bytes
+                             17 
+                             18 ;; Entity info
+                     0009    19 sizeof_e        == 9
+                     0064    20 max_entities    == 100
+                             21 
+                             22 
+                             23 ;; Bit for matching & properties
+                             24 
+                     0007    25 e_cmps_alive_bit    = 7
+                     0006    26 e_cmps_position_bit = 6
+                     0005    27 e_cmps_input_bit    = 5
+                     0004    28 e_cmps_physics_bit  = 4
+                     0003    29 e_cmps_render_bit   = 3
+                             30 
+                             31 ;; Component Types (masks)
+                     0000    32 e_cmps_invalid  = 0x00
+                     0080    33 e_cmps_alive    = (1 << e_cmps_alive_bit)
+                     0040    34 e_cmps_position = (1 << e_cmps_position_bit)
+                     0020    35 e_cmps_input    = (1 << e_cmps_input_bit)
+                     0010    36 e_cmps_physics  = (1 << e_cmps_physics_bit)
+                     0008    37 e_cmps_render   = (1 << e_cmps_render_bit)
+                     00FF    38 e_cmps_default  = 0xFF
+                             39 
+                             40 ;; Entity types
+                     0000    41 e_type_mainchar     = 0
+                     0001    42 e_type_enemy        = 1
+                     0002    43 e_type_floor        = 2
+                     0003    44 e_type_bullet       = 3
+                             45 
+                             46 ;; Public functions
+                             47 .globl man_entity_init
+                             48 .globl man_entity_create
+                             49 .globl man_entity_destroy
+                             50 .globl man_entity_forall
+                             51 .globl man_entity_forall_matching
+                             52 .globl man_entity_forall_pairs_matching
+                             53 .globl man_entity_get_from_idx
+                             54 .globl man_entity_set4destruction
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 3.
+Hexadecimal [16-Bits]
+
+
+
+                             55 .globl man_entity_update
+                             56 .globl cpct_memcpy_asm
+                             57 .globl man_entity_increase_num
+                             58 .globl man_entity_decrease_num
+                             59 .globl mainchar_entity
+                             60 .globl increase_free_entity
+                             61 .globl man_entity_first_entity
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 4.
+Hexadecimal [16-Bits]
+
+
+
+                              4 
+                              5 .globl cpct_setVideoMode_asm
+                              6 .globl man_entity_forall
+                              7 .globl cpct_setPalette_asm
+                              8 .globl cpct_getScreenPtr_asm
+                              9 .globl cpct_drawSolidBox_asm
+                             10 
+                             11 ;; sys_render_init::   ;; NO FUNCIONA
+                             12 ;;     ;; MODE 0
+                             13 ;;     ld c, #0
+                             14 ;;     call cpct_setVideoMode_asm
+                             15 ;; 
+                             16 ;;     ;; BORDER, SET_PALETTE
+                             17 ;;     cpctm_setBorder_asm HW_WHITE
+                             18 ;;     ld hl, #palette
+                             19 ;;     ld de, #16
+                             20 ;;     call cpct_setPalette_asm
+                             21 ;; ret
+                             22 
+                             23 ;; ---------------------------------------------
+                             24 ;; Updates all the entities
+                             25 ;; B -> Mask to filter
+                             26 ;; ---------------------------------------------
+   40C9                      27 sys_render_update::
+   40C9 21 D2 40      [10]   28     ld hl, #sys_render_forone
+   40CC 06 08         [ 7]   29     ld b, #e_cmps_render ;; e_cmps_render
+   40CE CD CC 44      [17]   30     call man_entity_forall_matching
+   40D1 C9            [10]   31 ret
+                             32 
+                             33 ;; -----------------------------------------
+                             34 ;; Renders one entity
+                             35 ;; IX -> entity
+                             36 ;; -----------------------------------------
+   40D2                      37 sys_render_forone::
+                             38 
+   40D2 DD 5E 07      [19]   39     ld e, e_prv_ptr+0(ix)
+   40D5 DD 56 08      [19]   40     ld d, e_prv_ptr+1(ix)
+   40D8 AF            [ 4]   41     xor a
+   40D9 CD 73 45      [17]   42     call cpct_drawSolidBox_asm
+                             43 
+   40DC 11 00 C0      [10]   44     ld de, #0xC000
+   40DF DD 4E 01      [19]   45     ld c, e_x(ix)
+   40E2 DD 46 02      [19]   46     ld b, e_y(ix)
+   40E5 CD 48 46      [17]   47     call cpct_getScreenPtr_asm
+   40E8 EB            [ 4]   48     ex de, hl
+                             49 
+   40E9 DD 73 07      [19]   50     ld e_prv_ptr+0(ix), e
+   40EC DD 72 08      [19]   51     ld e_prv_ptr+1(ix), d
+                             52 
+   40EF DD 7E 05      [19]   53     ld a, e_color(ix)
+   40F2 01 02 08      [10]   54     ld bc, #0x0802
+   40F5 CD 73 45      [17]   55     call cpct_drawSolidBox_asm
+   40F8 C9            [10]   56 ret
+                             57 
+   40F9                      58 sys_render_wait::
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 5.
+Hexadecimal [16-Bits]
+
+
+
+   40F9 3E 12         [ 7]   59     ld a, #18
+   40FB                      60     halts:
+   40FB 76            [ 4]   61         halt
+   40FC 76            [ 4]   62         halt
+   40FD 3D            [ 4]   63         dec a
+   40FE 20 FB         [12]   64         jr nz, halts
+   4100 C9            [10]   65 ret

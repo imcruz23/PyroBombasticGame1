@@ -1,0 +1,77 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  2710 GL
+    .__.ABS.                                                    =  0000 G
+    .__.CPU.                                                    =  0000 GL
+    .__.H$L.                                                    =  0000 GL
+  0 afterjp                                                        03BB GR
+  0 afterjp_matching                                               03EA GR
+  0 array_entities                                                 0003 GR
+  0 continue                                                       03E2 GR
+  0 count                                                          03A3 GR
+    cpct_memcpy_asm                                                **** GX
+    e_cmps                                                      =  0000 G
+    e_cmps_alive                                                =  0080 G
+    e_cmps_alive_bit                                            =  0007 G
+    e_cmps_default                                              =  00FF G
+    e_cmps_input                                                =  0020 G
+    e_cmps_input_bit                                            =  0005 G
+    e_cmps_invalid                                              =  0000 G
+    e_cmps_physics                                              =  0010 G
+    e_cmps_physics_bit                                          =  0004 G
+    e_cmps_position                                             =  0040 G
+    e_cmps_position_bit                                         =  0006 G
+    e_cmps_render                                               =  0008 G
+    e_cmps_render_bit                                           =  0003 G
+    e_color                                                     =  0005 G
+    e_prv_ptr                                                   =  0007 G
+    e_type                                                      =  0006 G
+    e_type_bullet                                               =  0003 G
+    e_type_enemy                                                =  0001 G
+    e_type_floor                                                =  0002 G
+    e_type_mainchar                                             =  0000 G
+    e_vx                                                        =  0003 G
+    e_vy                                                        =  0004 G
+    e_x                                                         =  0001 G
+    e_y                                                         =  0002 G
+  0 final                                                          03C7 GR
+  0 final_matching                                                 03F7 GR
+  0 function_for_all                                               03A1 GR
+  0 increase_free_entity                                           040F GR
+  0 loop_forall                                                    03AF GR
+  0 loop_forall_matching                                           03D6 GR
+    mainchar_entity                                                **** GX
+  0 man_entity_create                                              0388 GR
+  0 man_entity_decrease_num                                        0407 GR
+  0 man_entity_destroy                                             03A0 GR
+  0 man_entity_first_entity                                        041A GR
+  0 man_entity_forall                                              03A4 GR
+  0 man_entity_forall_matching                                     03CB GR
+  0 man_entity_forall_pairs_matching                               03FB GR
+  0 man_entity_get_from_idx                                        03FC GR
+  0 man_entity_increase_num                                        03FF GR
+  0 man_entity_init                                                0387 GR
+  0 man_entity_set4destruction                                     03FD GR
+  0 man_entity_update                                              03FE GR
+    max_entities                                                =  0064 G
+  0 next_free_entity                                               0000 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 2.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+  0 num_entities                                                   0002 GR
+    sizeof_e                                                    =  0009 G
+  0 skip_ce                                                        039F GR
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180), page 3.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE                                      size  421   flags    0
+

@@ -1,0 +1,77 @@
+XL2
+H 1 areas 35 global symbols
+M Entity_Manager
+S .__.H$L. Def0000
+S man_entity_forall_matching Ref0000
+S man_entity_decrease_num Ref0000
+S e_type_enemy Def0001
+S cpct_setPalette_asm Ref0000
+S e_cmps_alive_bit Def0007
+S e_cmps_input Def0020
+S e_type Def0006
+S increase_free_entity Ref0000
+S e_type_floor Def0002
+S max_entities Def0064
+S man_entity_set4destruction Ref0000
+S man_entity_create Ref0000
+S man_entity_init Ref0000
+S e_cmps_position Def0040
+S man_entity_get_from_idx Ref0000
+S man_entity_increase_num Ref0000
+S e_prv_ptr Def0007
+S sizeof_e Def0009
+S e_cmps_render Def0008
+S man_entity_forall Ref0000
+S e_cmps_physics Def0010
+S man_entity_update Ref0000
+S .__.ABS. Def0000
+S man_entity_destroy Ref0000
+S e_color Def0005
+S e_cmps_input_bit Def0005
+S e_cmps_alive Def0080
+S e_type_mainchar Def0000
+S e_cmps_position_bit Def0006
+S e_type_bullet Def0003
+S .__.CPU. Def0000
+S cpct_setVideoMode_asm Ref0000
+S e_vx Def0003
+S e_vy Def0004
+S cpct_memcpy_asm Ref0000
+S e_cmps_render_bit Def0003
+S .__.$$$. Def2710
+S e_cmps_physics_bit Def0004
+S e_cmps Def0000
+S cpct_drawSolidBox_asm Ref0000
+S man_entity_first_entity Ref0000
+S e_cmps_default Def00FF
+S e_x Def0001
+S e_cmps_invalid Def0000
+S e_y Def0002
+S cpct_getScreenPtr_asm Ref0000
+S mainchar_entity Ref0000
+S man_entity_forall_pairs_matching Ref0000
+A _CODE size 38 flags 0 addr 0
+S sys_render_wait Def0030
+S halts Def0032
+S sys_render_update Def0000
+S sys_render_forone Def0009
+T 00 00
+R 00 00 00 00
+T 00 00 21 09 00 06 08 CD 00 00 C9
+R 00 00 00 00 00 03 00 00 02 08 01 00
+T 09 00
+R 00 00 00 00
+T 09 00 DD 5E 07 DD 56 08 AF CD 00 00 11 00 C0 DD
+R 00 00 00 00 02 0A 28 00
+T 17 00 4E 01 DD 46 02 CD 00 00 EB DD 73 07 DD 72
+R 00 00 00 00 02 08 2E 00
+T 25 00 08 DD 7E 05 01 02 08 CD 00 00 C9
+R 00 00 00 00 02 0A 28 00
+T 30 00
+R 00 00 00 00
+T 30 00 3E 12
+R 00 00 00 00
+T 32 00
+R 00 00 00 00
+T 32 00 76 76 3D 20 FB C9
+R 00 00 00 00
