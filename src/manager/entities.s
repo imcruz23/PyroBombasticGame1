@@ -1,4 +1,14 @@
 ;; INIT OF ENTITIES.S
+
+;; ----------------- TODO -----------------------
+;;  Delete entity
+;;  Being able to destroy and create entities
+;;
+;;
+;;
+;;
+;;
+;; ---------------------------------------------
 .include "entities.h.s"
 
 next_free_entity: .dw array_entities
