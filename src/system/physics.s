@@ -1,5 +1,15 @@
 ;; INIT OF PHYSICS.S
 
+;; ----------------- TODO -----------------------
+;;  Fix the horizontal movement bug
+;;  
+;;
+;;
+;;
+;;
+;;
+;; ---------------------------------------------
+
 .include "cpctelera.h.s"
 .include "./manager/entities.h.s"
 .globl man_entity_forall
