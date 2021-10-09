@@ -11,11 +11,12 @@ e_x         == 1
 e_y         == 2
 e_vx        == 3
 e_vy        == 4
-e_color     == 5
-e_type      == 6
-e_prv_ptr   == 7      ;; Pointer, 2 bytes
-e_width     == 9
-e_height    == 10
+e_w         == 5
+e_h         == 6
+e_color     == 7
+e_type      == 8
+e_prv_ptr   == 9      ;; Pointer, 2 bytes
+
 
 ;; Entity info
 sizeof_e        == 11

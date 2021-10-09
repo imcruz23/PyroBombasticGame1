@@ -35,10 +35,11 @@ ret
 ;; IX -> entity
 ;; -----------------------------------------
 sys_render_forone::
-
+    
+    xor a ;; A = 0
     ld e, e_prv_ptr+0(ix)
     ld d, e_prv_ptr+1(ix)
-    xor a
+
     call cpct_drawSolidBox_asm
 
     ld de, #0xC000
@@ -51,7 +52,9 @@ sys_render_forone::
     ld e_prv_ptr+1(ix), d
 
     ld a, e_color(ix)
-    ld bc, #0x0802
+    ;;ld bc, #0x0802
+    ld c, e_w(ix)
+    ld b, e_h(ix)
     call cpct_drawSolidBox_asm
 ret
 

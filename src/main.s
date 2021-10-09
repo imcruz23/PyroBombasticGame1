@@ -49,11 +49,11 @@
 cmps == e_cmps_position | e_cmps_alive | e_cmps_render | e_cmps_physics | e_cmps_input
 
 ;; Structure of templates:
-;;                   cmps - x - y - vx - vy - color - e_type
-mainchar_entity:: .db cmps, #0x00, #0x00, 0, 0, #0xFF , e_type_mainchar
+;;                   cmps - x - y - vx - vy - w - h - color - e_type 
+mainchar_entity:: .db cmps, 0, 0, 0, 0, #0x02, #0x08, #0xFF , e_type_mainchar
 
 cmps == e_cmps_position | e_cmps_alive | e_cmps_physics | e_cmps_render
-enemy_entity:: .db cmps, #0x12, #0x10, 0,0, #0xF0, e_type_enemy
+enemy_entity:: .db cmps, 2, 10, 0, 0, #0x02, #0x08, #0xF0, e_type_enemy
 
 _main::
    ;; Disable firmware to prevent it from interfering with string drawing
