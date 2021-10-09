@@ -74,6 +74,7 @@ _main::
    ;; Loop forever
 loop:
    call sys_physics_update
+   call sys_input_update
    call sys_render_update
    call sys_render_wait
    call cpct_waitVSYNC_asm
